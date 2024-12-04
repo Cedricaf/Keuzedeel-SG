@@ -1,6 +1,5 @@
 # Services
 services:
-
   # PHP FPM Service
   php:
     image: wodby/php:latest
@@ -13,9 +12,9 @@ services:
   nginx:
     image: nginx:latest
     ports:
-      - 189:80
+      - 89:80
     links:
-      - 'php'
+      - php
     volumes:
       - './:/var/www/html'
       - './docker:/etc/nginx/conf.d'
@@ -30,15 +29,23 @@ services:
       MYSQL_USER: my_user
       MYSQL_PASSWORD: my_pass
       MYSQL_ROOT_PASSWORD: R00tp@ss
+    volumes:
+      - mariadb_data:/var/lib/mysql
     ports:
       - 3308:3306
 
-  # phpmyadmin in an external image
+  # PHPMyAdmin Service
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin:latest
+    container_name: phpmyadmin-container
     environment:
-      PMA_HOST: mariadb
-      PMA_USER: root
-      PMA_PASSWORD: R00tp@ss
+      PMA_HOST: mariadb        
+      PMA_USER: root             
+      PMA_PASSWORD: R00tp@ss     
     ports:
-      - "1088:80"
+      - "1088:80"                
+    depends_on:
+      - mariadb
+
+volumes:
+  mariadb_data:
