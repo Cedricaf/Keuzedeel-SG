@@ -1,0 +1,301 @@
+/* Global Styles */
+#root {
+  background-color: white;
+}
+
+body {
+  height: 100%;
+  /* Add subtle top and bottom shadow to the body to simulate a phone-like effect */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5), 0px -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* App Container Styles */
+.bg-navy {
+  background-color: #0057A3 !important;
+}
+
+.loll {
+  background: red;
+}
+
+/* Slideshow Image and Arrow Button Styles */
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  /* Reduced maximum width */
+  height: 300px;
+  /* Reduced height */
+  overflow: hidden;
+  margin-bottom: 40px;
+  /* Space below the image container */
+}
+
+.slideshow-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensure the image covers the container fully without distortion */
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    max-width: 100%;
+    height: 250px;
+    /* Adjust height for smaller screens */
+  }
+}
+
+
+/* Arrow Button Styles */
+.arrow-buttons {
+  position: absolute;
+  top: 50%;
+  /* Center vertically */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Center horizontally and vertically */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.arrow-button {
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.arrow-button:hover {
+  color: #0057A3;
+}
+
+.left-arrow {
+  text-align: left;
+}
+
+.right-arrow {
+  text-align: right;
+}
+
+/* Adjust the content below the slideshow */
+.content-container {
+  margin-top: 40px;
+  /* Add space between image and content */
+}
+
+/* Search Bar Styles */
+.search-bar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 20px;
+  color: black;
+}
+
+.search-input {
+  width: 500px;
+  padding: 10px 10px 10px 30px;
+  font-size: 16px;
+  border: 2.5px solid black;
+  border-radius: 30px;
+  outline: none;
+  color: black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border 0.3s ease;
+  text-align: center;
+}
+
+.search-input::placeholder {
+  color: black;
+  font-size: 17.5px;
+  font-weight: 800;
+  /* Set placeholder text color to black */
+}
+
+
+/* Language Header Styles */
+.language-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.language-text {
+  font-size: 24px;
+  color: black;
+}
+
+.flag-image {
+  width: 30px;
+  height: auto;
+}
+
+/* Alphabet Circle Styles */
+.alphabet-circles {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.circle-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.circle {
+  width: 60px;
+  /* Set a fixed width */
+  height: 60px;
+  /* Set height to match the width for perfect circle */
+  border-radius: 50%;
+  /* Ensure it's fully circular */
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+  /* Increase font size for readability */
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.circle:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+
+/* Quote Card Styles */
+.card {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #0057A3;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-text {
+  font-size: 20px;
+  font-style: italic;
+  color: #333;
+}
+
+.card-footer {
+  background-color: transparent;
+  border: none;
+}
+
+.card .btn {
+  background-color: transparent;
+  color: black;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.card .btn-text {
+  text-decoration: underline;
+}
+
+.card .btn:hover {
+  color: #0056b3;
+}
+
+.card .btn i {
+  font-size: 18px;
+}
+
+.card .btn:hover .btn-text {
+  text-decoration: none;
+}
+
+/* Language Images Section */
+.language-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  /* Adjust separator size */
+}
+
+.language-img {
+  width: 50px;
+  /* Increase size of flags */
+  height: auto;
+}
+
+.separator {
+  font-size: 27.5px;
+  color: #333;
+  margin: 0 5px;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .search-input {
+    width: 90%;
+  }
+}
+
+/* CSS for custom positioning */
+.navbar-container {
+  position: fixed; /* Positions it at a specific location */
+  top: 0; /* Change this to bottom: 0 for bottom positioning */
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures navbar stays on top of other content */
+}
+
+.navbar {
+  background-color: #343a40; /* Dark background */
+}
